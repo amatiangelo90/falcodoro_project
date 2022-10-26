@@ -1,0 +1,19 @@
+targets:
+  swagger_dart_code_generator:swagger_dart_code_generator:
+    builders:
+      swagger_dart_code_generator:
+        enabled: True
+  $default:
+    sources:
+      - lib/swagger/**
+    builders:
+      chopper_generator:
+        options:
+          header: "//Generated code"
+      swagger_dart_code_generator:
+        options:
+          input_folder: "lib/swagger/"
+          output_folder: "lib/falcomanager/"
+          build_only_models: false
+          separate_models: true
+          with_converter: true
